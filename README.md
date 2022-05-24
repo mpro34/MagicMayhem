@@ -2,5 +2,14 @@
 A 3rd-Person multiplayer shooter game
 
 ## Systems to Implement:
-- User interface for weapons when near them. So that you know what you are picking up.
+- **User interface for weapons when near them**. So that you know what you are picking up.
 ![User Interface for Weapons](https://github.com/mpro34/MagicMayhem/blob/main/weapon-ui-example.jpg)
+
+- **Destructible Enviornments**: Barrels, Vehicles, etc.
+- **Different classes**: Each class has two different weapons (light and heavy), a utility (grenades), and a special ability. Special weapons are able to be picked up by all classes: Rocket Launcher, Grenade Launcher, Sniper
+1. Soldier - Assault Rifle, Pistol
+2. Mechanic - Shotgun, Pistol
+3. Medic - Smg, Heal-Darts
+5. Recon - Sniper, Smg
+
+- **Eventual 4player coop mode**
