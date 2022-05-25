@@ -1,5 +1,5 @@
 # MagicMayhem
-## A 3rd-Person multiplayer shooter game. This game is currently being built with UE5...
+## A 3rd-Person multiplayer shooter game. This game is currently being built with Unreal Engine 5.
 
 ![Gameplay Screenshot](https://github.com/mpro34/MagicMayhem/blob/main/mm_screenshot1.png)
 
