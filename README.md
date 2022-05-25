@@ -16,4 +16,4 @@ A 3rd-Person multiplayer shooter game. This game is currently being built with U
 3. Medic - Smg, Heal-Darts
 5. Recon - Sniper, Smg
 
-- **Eventual 4player coop mode**
+- **Team based-death match game mode**
