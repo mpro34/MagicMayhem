@@ -1,6 +1,6 @@
 # MagicMayhem
 A 3rd-Person multiplayer shooter game. This game is currently being built with UE5...
-![Gameplay Screenshot](https)
+![Gameplay Screenshot](https://github.com/mpro34/MagicMayhem/blob/main/mm_screenshot1.png)
 
 ## Systems to Implement:
 - **User interface for weapons when near them**. So that you know what you are picking up.
