@@ -5,6 +5,10 @@
 
 ## Systems to Implement (not in order of priority):
 - [ ] **Different game skin**. More realistic aesthetic to match the weapons.
+  - [ ] Character(s)
+  - [ ] Weapons
+  - [ ] Cityscape
+  - [ ] City props 
 - [ ] **A minimap**. Add a minimap to the HUD. This should show Enemies, Friendlies, weapons, power-ups, and ammo pickups.
 - [ ] **More advanced hitreactions**. Add bloodspray / more realistc damage based on location of hit. Perhaps add physics.
 - [ ] **User interface for weapons when near them**. So that you know what you are picking up.
