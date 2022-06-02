@@ -1,5 +1,7 @@
 # MagicMayhem
 #### A 3rd-Person multiplayer shooter game. This game is currently being built with Unreal Engine 5. A multiplayer steam sessions plugin can be exported to other projects that require steam sessions.
+A Player is able to create a new steam session with HOST or join another steam session with JOIN.
+![LoginScreen](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/LoginScreen_1.jpg)
 
 There are 3 sections to the game mode, the first gets the players ready to start, the second is the actual death-mathc, and the third is the winner announcement and cooldown period. These three modes are illustrated below.
 ![GameStart Screenshot](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/Opening_1.jpg)
