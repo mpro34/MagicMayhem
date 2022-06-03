@@ -166,6 +166,13 @@ private:
 	class UWidgetComponent* PickupWidget;
 
 	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	class UTexture2D* WeaponTexture;
+	//UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	//class UMaterialInstance* WeaponMatInst;
+	//UPROPERTY(EditAnywhere, Category = "Weapon Properties")
+	//class UObject* WeaponObjectImage;
+
+	UPROPERTY(EditAnywhere, Category = "Weapon Properties")
 	class UAnimationAsset* FireAnimation;
 
 	UPROPERTY(EditAnywhere)

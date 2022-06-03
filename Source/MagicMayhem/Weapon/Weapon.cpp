@@ -13,6 +13,7 @@
 #include "MagicMayhem/PlayerController/MagiPlayerController.h"
 #include "MagicMayhem/MagiComponents/CombatComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "MagicMayhem/HUD/WeaponPickup.h"
 
 AWeapon::AWeapon()
 {
@@ -55,6 +56,12 @@ void AWeapon::BeginPlay()
 	if (PickupWidget)
 	{
 		ShowPickupWidget(false);
+		UWeaponPickup* WeaponPickupWidget = Cast<UWeaponPickup>(PickupWidget->GetWidget());
+		if (WeaponPickupWidget && WeaponTexture)
+		{
+			WeaponPickupWidget->SetWeaponImage(WeaponTexture);
+			WeaponPickupWidget->SetAmmoAmtText(Ammo);
+		}
 	}
 
 	AreaSphere->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);

@@ -47,7 +47,6 @@ public:
 	void AddAnnouncement();
 
 	void AddElimAnnouncement(FString Attacker, FString Victim);
-
 protected:
 	virtual void BeginPlay() override;
 
