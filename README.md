@@ -16,7 +16,8 @@ There are 3 sections to the game mode, the first gets the players ready to start
   - [X] Military props 
 - [X] **Latency protections**. Add client-side prediction, reconcilliation and server-side rewind to various gameplay systems while testing at 150+ms ping.
 - [X] **Team based-death match game mode** 
-- [ ] **User interface for weapons when near them**. So that you know what you are picking up.
+- [ ] **Team Capture the flag game mode**
+- [X] **User interface for weapons when near them**. So that you know what you are picking up.
 ![User Interface for Weapons](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/weapon-ui-example.jpg)
 - [ ] **A minimap**. Add a minimap to the HUD. This should show Enemies, Friendlies, weapons, power-ups, and ammo pickups.
 - [ ] **HUD v2**. Should be similar to the BF2 version. ![BF2 HUD](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/swbf2_screenshot1.jpg)
