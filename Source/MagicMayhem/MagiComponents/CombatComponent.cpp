@@ -36,6 +36,7 @@ void UCombatComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 	DOREPLIFETIME_CONDITION(UCombatComponent, CarriedAmmo, COND_OwnerOnly); // Server will only replicate to owning client
 	DOREPLIFETIME(UCombatComponent, CombatState);
 	DOREPLIFETIME(UCombatComponent, Grenades);
+	DOREPLIFETIME(UCombatComponent, bHoldingTheFlag);
 }
 
 void UCombatComponent::ShotgunShellReload()
@@ -553,17 +554,30 @@ void UCombatComponent::EquipWeapon(AWeapon* WeaponToEquip)
 {
 	if (Character == nullptr || WeaponToEquip == nullptr) return;
 	if (CombatState != ECombatState::ECS_Unoccupied) return;
-	if (EquippedWeapon != nullptr && SecondaryWeapon == nullptr)
+
+	if (WeaponToEquip->GetWeaponType() == EWeaponType::EWT_Flag)
 	{
-		EquipSecondaryWeapon(WeaponToEquip);
+		Character->Crouch();
+		bHoldingTheFlag = true;
+		AttachFlagToLeftHand(WeaponToEquip);
+		WeaponToEquip->SetWeaponState(EWeaponState::EWS_Equipped);
+		WeaponToEquip->SetOwner(Character);
 	}
 	else
 	{
-		EquipPrimaryWeapon(WeaponToEquip);
+		if (EquippedWeapon != nullptr && SecondaryWeapon == nullptr)
+		{
+			EquipSecondaryWeapon(WeaponToEquip);
+		}
+		else
+		{
+			EquipPrimaryWeapon(WeaponToEquip);
+		}
+
+		Character->GetCharacterMovement()->bOrientRotationToMovement = false;
+		Character->bUseControllerRotationYaw = true;
 	}
 
-	Character->GetCharacterMovement()->bOrientRotationToMovement = false;
-	Character->bUseControllerRotationYaw = true;
 }
 
 void UCombatComponent::SwapWeapons()
@@ -744,6 +758,16 @@ void UCombatComponent::AttachActorToLeftHand(AActor* ActorToAttach)
 	}
 }
 
+void UCombatComponent::AttachFlagToLeftHand(AWeapon* Flag)
+{
+	if (Character == nullptr || Character->GetMesh() == nullptr || Flag == nullptr || EquippedWeapon == nullptr) return;
+	const USkeletalMeshSocket* HandSocket = Character->GetMesh()->GetSocketByName(FName("FlagSocket"));
+	if (HandSocket)
+	{
+		HandSocket->AttachActor(Flag, Character->GetMesh());
+	}
+}
+
 void UCombatComponent::AttachActorToBackpack(AActor* ActorToAttach)
 {
 	if (Character == nullptr || Character->GetMesh() == nullptr || ActorToAttach == nullptr) return;
@@ -875,5 +899,13 @@ void UCombatComponent::UpdateHUDGrenades()
 bool UCombatComponent::ShouldSwapWeapons()
 {
 	return EquippedWeapon != nullptr && SecondaryWeapon != nullptr;
+}
+
+void UCombatComponent::OnRep_HoldingTheFlag()
+{
+	if (bHoldingTheFlag && Character && Character->IsLocallyControlled())
+	{
+		Character->Crouch(); // Ensure to crouch on all clients
+	}
 }
 

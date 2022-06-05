@@ -42,6 +42,7 @@ void UMagiAnimInstance::NativeUpdateAnimation(float delta_time)
 	TurningInPlace = MagiCharacter->GetTurningInPlace();
 	bRotateRootBone = MagiCharacter->ShouldRotateRootBone();
 	bEliminated = MagiCharacter->IsEliminated();
+	bHoldingTheFlag = MagiCharacter->IsHoldingTheFlag();
 
 	// Offset Yaw for strafing
 	FRotator AimRotation = MagiCharacter->GetBaseAimRotation();
