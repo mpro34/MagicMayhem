@@ -41,7 +41,7 @@ public:
 	void ShowPickupWidget(bool bShowWidget);
 	void SetHUDAmmo();
 	virtual void Fire(const FVector& HitTarget);
-	void Dropped();
+	virtual void Dropped();
 	void AddAmmo(int32 AmmoToAdd);
 	/**
 	Textures for the weapon crosshairs
@@ -100,8 +100,8 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void OnWeaponStateSet();
 
-	void HandleWeaponDropped();
-	void HandleWeaponEquipped();
+	virtual void HandleWeaponDropped();
+	virtual void HandleWeaponEquipped();
 	virtual void HandleSecondaryWeaponEquipped();
 
 	UFUNCTION()

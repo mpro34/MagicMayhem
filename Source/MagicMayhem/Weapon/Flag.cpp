@@ -17,3 +17,42 @@ AFlag::AFlag()
 	FlagMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
+void AFlag::Dropped()
+{
+	SetWeaponState(EWeaponState::EWS_Dropped);
+	FDetachmentTransformRules DetachRules(EDetachmentRule::KeepWorld, true);
+	FlagMesh->DetachFromComponent(DetachRules);
+	SetOwner(nullptr);
+	OwningCharacter = nullptr;
+	OwningController = nullptr;
+}
+
+void AFlag::HandleWeaponDropped()
+{
+	if (HasAuthority())
+	{
+		GetAreaSphere()->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	}
+	FlagMesh->SetSimulatePhysics(true);
+	FlagMesh->SetEnableGravity(false);
+	FlagMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	FlagMesh->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Block);
+	FlagMesh->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Ignore);
+	FlagMesh->SetCollisionResponseToChannel(ECollisionChannel::ECC_Camera, ECollisionResponse::ECR_Ignore);
+
+	FlagMesh->SetCustomDepthStencilValue(CUSTOM_DEPTH_BLUE);
+	FlagMesh->MarkRenderStateDirty();
+	EnableCustomDepth(true);
+}
+
+void AFlag::HandleWeaponEquipped()
+{
+	if (FlagMesh == nullptr) return;
+	ShowPickupWidget(false);
+	GetAreaSphere()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	FlagMesh->SetSimulatePhysics(false);
+	FlagMesh->SetEnableGravity(false);
+	FlagMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	EnableCustomDepth(false);
+}
+

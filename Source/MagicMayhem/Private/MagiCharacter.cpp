@@ -296,6 +296,10 @@ void AMagiCharacter::DropOrDestroyWeapons()
 		{
 			DropOrDestroyWeapon(Combat->SecondaryWeapon);
 		}
+		if (Combat->bHoldingTheFlag)
+		{
+			Combat->EquippedFlag->Dropped();
+		}
 	}
 }
 
@@ -550,6 +554,7 @@ void AMagiCharacter::GrenadeButtonPressed()
 {
 	if (Combat)
 	{
+		if (Combat->bHoldingTheFlag) return;
 		Combat->ThrowGrenade();
 	}
 }
@@ -629,6 +634,7 @@ void AMagiCharacter::EquipButtonPressed()
 	if (bDisableGameplay) return;
 	if (Combat)
 	{
+		if (Combat->bHoldingTheFlag) return;
 		if (Combat->CombatState == ECombatState::ECS_Unoccupied) ServerEquipButtonPressed();
 		bool bSwap = Combat->ShouldSwapWeapons() && 
 			!HasAuthority() && 
@@ -673,6 +679,7 @@ void AMagiCharacter::ServerEquipButtonPressed_Implementation()
 
 void AMagiCharacter::CrouchButtonPressed()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (bIsCrouched)
 	{
@@ -686,6 +693,7 @@ void AMagiCharacter::CrouchButtonPressed()
 
 void AMagiCharacter::ReloadButtonPressed()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (Combat)
 	{
@@ -695,6 +703,7 @@ void AMagiCharacter::ReloadButtonPressed()
 
 void AMagiCharacter::AimButtonPressed()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (Combat)
 	{
@@ -704,6 +713,7 @@ void AMagiCharacter::AimButtonPressed()
 
 void AMagiCharacter::AimButtonReleased()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (Combat)
 	{
@@ -793,6 +803,7 @@ void AMagiCharacter::SimProxiesTurn()
 
 void AMagiCharacter::Jump()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (bIsCrouched)
 	{
@@ -806,6 +817,7 @@ void AMagiCharacter::Jump()
 
 void AMagiCharacter::FireButtonPressed()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (Combat)
 	{
@@ -815,6 +827,7 @@ void AMagiCharacter::FireButtonPressed()
 
 void AMagiCharacter::FireButtonReleased()
 {
+	if (Combat && Combat->bHoldingTheFlag) return;
 	if (bDisableGameplay) return;
 	if (Combat)
 	{

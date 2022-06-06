@@ -16,6 +16,11 @@ class MAGICMAYHEM_API AFlag : public AWeapon
 
 public:
 	AFlag();
+	virtual void Dropped() override;
+
+protected:
+	virtual void HandleWeaponDropped() override;
+	virtual void HandleWeaponEquipped() override;
 
 private:
 
