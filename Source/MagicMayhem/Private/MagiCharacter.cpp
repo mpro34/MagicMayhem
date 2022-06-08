@@ -1052,3 +1052,10 @@ bool AMagiCharacter::IsHoldingTheFlag() const
 	if (Combat == nullptr) return false;
 	return Combat->bHoldingTheFlag;
 }
+
+ETeam AMagiCharacter::GetTeam()
+{
+	MagiPlayerState = MagiPlayerState == nullptr ? GetPlayerState<AMagiPlayerState>() : MagiPlayerState;
+	if (MagiPlayerState == nullptr) return ETeam::ET_NoTeam;
+	return MagiPlayerState->GetTeam();
+}
