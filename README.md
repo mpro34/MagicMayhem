@@ -3,7 +3,7 @@
 A Player is able to create a new steam session with HOST or join another steam session with JOIN.
 ![LoginScreen](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/LoginScreen_1.jpg)
 
-There are 3 sections to the game mode, the first gets the players ready to start, the second is the actual death-mathc, and the third is the winner announcement and cooldown period. These three modes are illustrated below.
+There are 3 sections to the game mode, the first gets the players ready to start, the second is the actual death-match, and the third is the winner announcement and cooldown period. These three modes are illustrated below.
 ![GameStart Screenshot](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/Opening_1.jpg)
 ![Gameplay Screenshot](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/Gameplay_2.jpg)
 ![GameCooldown Screenshot](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/Closing_1.jpg)
