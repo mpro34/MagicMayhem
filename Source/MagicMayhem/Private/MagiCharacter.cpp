@@ -202,6 +202,11 @@ void AMagiCharacter::RotateInPlace(float DeltaTime)
 		TurningInPlace = ETurningInPlace::ETIP_NotTurning;
 		return;
 	}
+	if (Combat && Combat->EquippedWeapon)
+	{
+		GetCharacterMovement()->bOrientRotationToMovement = false;
+		bUseControllerRotationYaw = true;
+	}
 	if (bDisableGameplay)
 	{
 		bUseControllerRotationYaw = false;
@@ -1093,4 +1098,10 @@ ETeam AMagiCharacter::GetTeam()
 	MagiPlayerState = MagiPlayerState == nullptr ? GetPlayerState<AMagiPlayerState>() : MagiPlayerState;
 	if (MagiPlayerState == nullptr) return ETeam::ET_NoTeam;
 	return MagiPlayerState->GetTeam();
+}
+
+void AMagiCharacter::SetHoldingTheFlag(bool bHolding)
+{
+	if (Combat == nullptr) return;
+	Combat->bHoldingTheFlag = bHolding;
 }
