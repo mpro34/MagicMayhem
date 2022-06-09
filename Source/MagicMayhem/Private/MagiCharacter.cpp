@@ -27,6 +27,7 @@
 #include "MagicMayhem/GameState/MagiGameState.h"
 #include "Components/BoxComponent.h"
 #include "MagicMayhem/MagiComponents/LagCompensationComponent.h"
+#include "MagicMayhem/PlayerStart/TeamPlayerStart.h"
 
 AMagiCharacter::AMagiCharacter()
 {
@@ -955,6 +956,43 @@ void AMagiCharacter::SpawnDefaultWeapon()
 	}
 }
 
+void AMagiCharacter::OnPlayerStateInitialized()
+{
+	MagiPlayerState->AddToScore(0.0f);
+	MagiPlayerState->AddToDefeats(0);
+	SetTeamColor(MagiPlayerState->GetTeam());
+	SetSpawnPoint();
+}
+
+// Get all team spawn points that are for my team
+void AMagiCharacter::SetSpawnPoint()
+{
+	if (HasAuthority() && GetTeam() != ETeam::ET_NoTeam)
+	{
+		TArray<AActor*> PlayerStarts;
+		UGameplayStatics::GetAllActorsOfClass(this, ATeamPlayerStart::StaticClass(), PlayerStarts);
+		TArray<ATeamPlayerStart*> TeamPlayerStarts;
+		for (auto Start : PlayerStarts)
+		{
+			if (ATeamPlayerStart* TeamStart = Cast<ATeamPlayerStart>(Start))
+			{
+				if (TeamStart->Team == GetTeam())
+				{
+					TeamPlayerStarts.Add(TeamStart);
+				}
+			}
+		}
+		if (TeamPlayerStarts.Num() > 0)
+		{
+			ATeamPlayerStart* ChosenPlayerStart = TeamPlayerStarts[FMath::RandRange(0, TeamPlayerStarts.Num() - 1)];
+			SetActorLocationAndRotation(
+				ChosenPlayerStart->GetActorLocation(),
+				ChosenPlayerStart->GetActorRotation()
+			);
+		}
+	}
+}
+
 void AMagiCharacter::PollForHUDInit()
 {
 	if (MagiPlayerState == nullptr)
@@ -962,10 +1000,7 @@ void AMagiCharacter::PollForHUDInit()
 		MagiPlayerState = GetPlayerState<AMagiPlayerState>();
 		if (MagiPlayerState)
 		{
-			MagiPlayerState->AddToScore(0.0f);
-			MagiPlayerState->AddToDefeats(0);
-			SetTeamColor(MagiPlayerState->GetTeam());
-
+			OnPlayerStateInitialized();
 			AMagiGameState* MagiGameState = Cast<AMagiGameState>(UGameplayStatics::GetGameState(this));
 			if (MagiGameState && MagiGameState->TopScoringPlayers.Contains(MagiPlayerState))
 			{
