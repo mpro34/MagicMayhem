@@ -8,6 +8,9 @@
 /NODEFAULTLIB
 "C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Intermediate\Build\Win64\MagicMayhemEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.obj"
 "C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\Module.MultiplayerSessions.cpp.obj"
+"C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\Menu.cpp.obj"
 "C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\Module.MultiplayerSessions.gen.cpp.obj"
+"C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\Menu.gen.cpp.obj"
+"C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\MultiplayerSessions.init.gen.cpp.obj"
 "C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\Default.rc2.res"
 /OUT:"C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\Plugins\MultiplayerSessions\Intermediate\Build\Win64\UnrealEditor\DebugGame\MultiplayerSessions\UnrealEditor-MultiplayerSessions-Win64-DebugGame.lib"

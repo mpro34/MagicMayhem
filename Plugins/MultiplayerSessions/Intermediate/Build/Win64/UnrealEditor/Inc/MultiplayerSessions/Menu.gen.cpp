@@ -296,6 +296,14 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_JoinButton_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_JoinButton;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_NumPublicConnections_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_m_NumPublicConnections;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_MatchType_MetaData[];
+#endif
+		static const UECodeGen_Private::FStrPropertyParams NewProp_m_MatchType;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -335,9 +343,27 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton = { "JoinButton", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UMenu, JoinButton), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMenu_Statics::NewProp_m_NumPublicConnections_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Menu" },
+		{ "ModuleRelativePath", "Public/Menu.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_m_NumPublicConnections = { "m_NumPublicConnections", nullptr, (EPropertyFlags)0x0040000000000004, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UMenu, m_NumPublicConnections), METADATA_PARAMS(Z_Construct_UClass_UMenu_Statics::NewProp_m_NumPublicConnections_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_m_NumPublicConnections_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMenu_Statics::NewProp_m_MatchType_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Menu" },
+		{ "ModuleRelativePath", "Public/Menu.h" },
+	};
+#endif
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_m_MatchType = { "m_MatchType", nullptr, (EPropertyFlags)0x0040000000000004, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UMenu, m_MatchType), METADATA_PARAMS(Z_Construct_UClass_UMenu_Statics::NewProp_m_MatchType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_m_MatchType_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMenu_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_HostButton,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_m_NumPublicConnections,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_m_MatchType,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMenu_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UMenu>::IsAbstract,
@@ -375,9 +401,9 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicMayhem_Plugins_MultiplayerSessions_Source_MultiplayerSessions_Public_Menu_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMenu, UMenu::StaticClass, TEXT("UMenu"), &Z_Registration_Info_UClass_UMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMenu), 3957203401U) },
+		{ Z_Construct_UClass_UMenu, UMenu::StaticClass, TEXT("UMenu"), &Z_Registration_Info_UClass_UMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMenu), 455212930U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicMayhem_Plugins_MultiplayerSessions_Source_MultiplayerSessions_Public_Menu_h_995767627(TEXT("/Script/MultiplayerSessions"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicMayhem_Plugins_MultiplayerSessions_Source_MultiplayerSessions_Public_Menu_h_3756397470(TEXT("/Script/MultiplayerSessions"),
 		Z_CompiledInDeferFile_FID_MagicMayhem_Plugins_MultiplayerSessions_Source_MultiplayerSessions_Public_Menu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicMayhem_Plugins_MultiplayerSessions_Source_MultiplayerSessions_Public_Menu_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
