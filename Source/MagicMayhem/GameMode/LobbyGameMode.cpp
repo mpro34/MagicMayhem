@@ -26,7 +26,7 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 				FString MatchType = Subsystem->DesiredMatchType;
 				if (MatchType == "FreeForAll")
 				{
-					world->ServerTravel(FString("/Game/Maps/CityMap?listen"));
+					world->ServerTravel(FString("/Game/Maps/DeathMatch?listen"));
 				}
 				else if (MatchType == "Teams")
 				{
