@@ -19,6 +19,9 @@ There are 3 sections to the game mode, the first gets the players ready to start
 - [X] **Team Capture the flag game mode**
 - [X] **User interface for weapons when near them**. So that you know what you are picking up.
 - [ ] **New mine launcher weapon**. Shoots mines a short distance. If an enemy gets close, it'll explode.
+- [ ] **Default sword mode**. If the player has no weapons/no ammo/no grenades. The player should play an animation to get a sword for use to attack. Or just make the sword another weapon that is the default weapon.
+- [ ] **In-game currency and HUD update**. Requires a form of currency that can be accumulated for each player. The HUD should display the amount.
+- [ ] **A shop that allows players to buy/sell weapons, health-packs and shields**. This is how players will upgrade weapons. Get kills then you get money. Then buy more powerful weapons and ammo for said weapons.
 - [ ] **Titan Game Mode**. A new coop game mode where all players must defend multiple panels. Titans are spawned and will attack the panels. If attacked, they will attack you.
 - [ ] **Player Grappling**. Players are able to grab opponents with a grappling hook in left hand and small weapon in right.
 ![User Interface for Weapons](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/weapon-ui-example.jpg)
