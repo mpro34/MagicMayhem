@@ -47,4 +47,24 @@ There are 3 sections to the game mode, the first gets the players ready to start
 - [ ] **Steam**: Make game available on Steam.
 
 ## Story/Gameplay Goals:
-The team aspect, character progression/itemization of League of Legends. The gunplay, different customizations, and exploration of CoD Warzone. The replayability in Single-Player like Hades. The goals for this game were to have a team based 3rd-person shooter, where gun are the mainstay, however magic also plays a role in gameplay.
+- The goals for this game were to have a team based 3rd-person shooter, where gun are the mainstay, however magic also plays a role in gameplay.
+- Every game you play is unique. You start the game by choosing an archetype (Lighting, Fire, Ice, Earth). When you pick up weapons, some weapons will enhance your archetype, others will not. Every couple/several rounds you get the option of upgrading your archetype or choosing a magic ability from your archetype.
+The elements will be able to interact with the environment.
+
+#### Examples:
+- I chose the Fire archetype. 
+I pick up a pistol, the rounds are able to set things on fire.
+After several rounds, I choose the “Fireball” ability which lets me shoot a fireball as my Grenade.
+
+- I chose the Lightning archetype.
+I pick up a pistol, the rounds are able to stun/paralyze things.
+After several rounds, I choose the “Lightning Storm” ability, which lets me set paralyzing traps around the map.
+
+- I chose the Ice archetype.
+I pick up a pistol, the rounds are able to freeze things in place.
+After several rounds, I choose the “Ice Walls” and build paths around the map.
+
+- I chose the Earth archetype.
+I pick up a pistol, the rounds are able to blind opponents momentarily.
+After several rounds, I choose the “Earthquake” ability which makes the screen shake, affecting the aim of opponents.
+
