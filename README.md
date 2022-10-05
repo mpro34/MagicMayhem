@@ -20,6 +20,8 @@ There are 3 sections to the game mode, the first gets the players ready to start
 - [X] **User interface for weapons when near them**. So that you know what you are picking up.
 
 ## Work to be Completed:
+https://trello.com/b/hYpKKJOR/magic-mayhem
+
 #### Gameplay [Work-In-Progress]
 - [ ] **Single-Player Game Mode**. Able to play the game single player by AI enemy "zombies" to kill.
 - [ ] **New mine launcher weapon**. Shoots mines a short distance. If an enemy gets close, it'll explode.
