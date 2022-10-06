@@ -48,25 +48,15 @@ https://trello.com/b/hYpKKJOR/magic-mayhem
 - [ ] **Nintendo Switch**: Get Switch SDK access and make game playable on the Nintendo Switch.
 - [ ] **Steam**: Make game available on Steam.
 
-## Story/Gameplay Goals:
-- The goals for this game were to have a team based 3rd-person shooter, where gun are the mainstay, however magic also plays a role in gameplay.
-- Every game you play is unique. You start the game by choosing an archetype (Lighting, Fire, Ice, Earth). When you pick up weapons, some weapons will enhance your archetype, others will not. Every couple/several rounds you get the option of upgrading your archetype or choosing a magic ability from your archetype.
-The elements will be able to interact with the environment.
+## Story Goals:
+- The world has been ravaged by a virus. Magicians of the world have tried to combat this threat to no avail. You are a team of Magician Soldiers trying to survive a zombie onslaught. There are no guns, your attacking consists of magic abilities through magic stones and melee. All abilities are modeled after elements that have either damage, utility or both. Each player is able to equip one magic stone in each hand, thus imbueing the player with that element. The zombie virus is highly infectious, thus making the smallest contact from a zombie possible to infect the player.
 
-#### Examples:
-- I chose the Fire archetype. 
-I pick up a pistol, the rounds are able to set things on fire.
-After several rounds, I choose the “Fireball” ability which lets me shoot a fireball as my Grenade.
+## Gameplay Goals:
+- A round-based 3rd person shooter where the player will be shooting magic abilities and not bullets. 
+- Left trigger will control the Magic stone, while the Right trigger will be Melee. Space will jump, Shift will sprint.
+- The player(s) will be holed up in a location where a zombie horde will try to attack them. They will need to use their elements to defend against the onslaught.
+- A unique feature will be the highly infectious nature of the virus, and once a player dies, they become a "good" zombie. A "good" zombie is able to attack other zombies to help their living teammates, but are very limited.
+- Once all players become zombies, it's game over. The player(s) are to last the longest. There will be specials that get spawned based on the number of rounds completed.
+- Also, when zombies are killed, their bodies will continue to exist. If enough zombie corpses pile, it will contaminate the area and infect all players within that area. To avoid this, players will have to burn the bodies or freeze an melee them to eliminate the virus.
 
-- I chose the Lightning archetype.
-I pick up a pistol, the rounds are able to stun/paralyze things.
-After several rounds, I choose the “Lightning Storm” ability, which lets me set paralyzing traps around the map.
-
-- I chose the Ice archetype.
-I pick up a pistol, the rounds are able to freeze things in place.
-After several rounds, I choose the “Ice Walls” and build paths around the map.
-
-- I chose the Earth archetype.
-I pick up a pistol, the rounds are able to blind opponents momentarily.
-After several rounds, I choose the “Earthquake” ability which makes the screen shake, affecting the aim of opponents.
-
+The elements to start are Fire and Ice. Additions will be Storm and Void.
