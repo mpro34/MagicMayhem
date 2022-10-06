@@ -23,7 +23,7 @@ There are 3 sections to the game mode, the first gets the players ready to start
 https://trello.com/b/hYpKKJOR/magic-mayhem
 
 #### Gameplay [Work-In-Progress]
-- [ ] **Single-Player Game Mode**. Able to play the game single player by AI enemy "zombies" to kill.
+- [ ] **Zombies Game Mode**. Able to play the game single player or multiplayer by AI enemy "zombies" to kill.
 - [ ] **New mine launcher weapon**. Shoots mines a short distance. If an enemy gets close, it'll explode.
 - [ ] **Titan Game Mode**. A new coop game mode where all players must defend multiple panels. Titans are spawned and will attack the players. If attacked, they will attack you.
 - [ ] **Default sword mode**. If the player has no weapons/no ammo/no grenades. The player should play an animation to get a sword for use to attack. Or just make the sword another weapon that is the default weapon.
