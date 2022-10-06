@@ -49,7 +49,7 @@ https://trello.com/b/hYpKKJOR/magic-mayhem
 - [ ] **Steam**: Make game available on Steam.
 
 ## Story Goals:
-- The world has been ravaged by a virus. Magicians of the world have tried to combat this threat to no avail. You are a team of Magician Soldiers trying to survive a zombie onslaught. There are no guns, your attacking consists of magic abilities through magic stones and melee. All abilities are modeled after elements that have either damage, utility or both. Each player is able to equip one magic stone in each hand, thus imbueing the player with that element. The zombie virus is highly infectious, thus making the smallest contact from a zombie possible to infect the player.
+- The world has been ravaged by a virus. Magicians of the world have tried to combat this threat to no avail. You are a team of Magician Soldiers trying to survive a zombie onslaught. There are no guns, your attacking consists of magic abilities through magic stones and melee. All abilities are modeled after elements that have either damage, utility or both. Each player is able to equip one magic stone at a time and a melee weapon. The zombie virus is highly infectious, thus making the smallest contact from a zombie possible to infect the player.
 
 ## Gameplay Goals:
 - A round-based 3rd person shooter where the player will be shooting magic abilities and not bullets. 
@@ -60,3 +60,4 @@ https://trello.com/b/hYpKKJOR/magic-mayhem
 - Also, when zombies are killed, their bodies will continue to exist. If enough zombie corpses pile, it will contaminate the area and infect all players within that area. To avoid this, players will have to burn the bodies or freeze an melee them to eliminate the virus.
 
 The elements to start are Fire and Ice. Additions will be Storm and Void.
+The Melee weapons to start will be Fist, Baseball Bat, Sword.
