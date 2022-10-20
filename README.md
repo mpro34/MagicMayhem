@@ -23,6 +23,7 @@ There are 3 sections to the game mode, the first gets the players ready to start
 https://trello.com/b/hYpKKJOR/magic-mayhem
 
 #### Gameplay [Work-In-Progress]
+- [ ] **Online Game Systems**. Connect UE5 online systems
 - [ ] **Zombies Game Mode**. Able to play the game single player or multiplayer by AI enemy "zombies" to kill.
 - [ ] **Player Magic**. Players will no longer be able to use guns. Their weapons will be magic stones that are imbued with a magic element. Holding one gives the player a set of abilities to use against the zombie horde. Their off-hand is used only for melee.
 - [ ] **New mine launcher weapon**. Shoots mines a short distance. If an enemy gets close, it'll explode.
