@@ -1,0 +1,1 @@
+"C:\Program Files\Epic Games\UE_5.0\Engine\Binaries\Win64\UnrealEditor.exe" "C:\Users\cwhiting\Documents\Unreal Projects\MagicMayhem\MagicMayhem.uproject" -game -WINDOWED -resX=800 -ResY=700 -WinX=0 -WinY=20 -log

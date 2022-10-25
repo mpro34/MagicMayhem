@@ -40,7 +40,6 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
 	}
 	// Store the delegate in a FDelegate handle, so we can later remove it from the delegate list
 	CreateSessionCompleteDelegate_Handle = SessionInterface->AddOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegate);
-
 	LastSessionSettings = MakeShareable(new FOnlineSessionSettings());
 	LastSessionSettings->bIsLANMatch = IOnlineSubsystem::Get()->GetSubsystemName() == "NULL" ? true : false; // If NULL subsystem, LAN match is true, false for steam subsystem
 	LastSessionSettings->NumPublicConnections = NumPublicConnections;
@@ -51,8 +50,8 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
 	LastSessionSettings->Set(FName("MatchType"), MatchType, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
 	LastSessionSettings->BuildUniqueId = 1;
 	LastSessionSettings->bUseLobbiesIfAvailable = true;
-	const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
-	if (!SessionInterface->CreateSession(*LocalPlayer->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
+	//const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+	if (!SessionInterface->CreateSession(/* *LocalPlayer->GetPreferredUniqueNetId()*/0, NAME_GameSession, *LastSessionSettings))
 	{
 		SessionInterface->ClearOnCreateSessionCompleteDelegate_Handle(CreateSessionCompleteDelegate_Handle);
 
@@ -61,7 +60,7 @@ void UMultiplayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
 	}
 }
 
-void UMultiplayerSessionsSubsystem::FindSessions(int32 MaxSearchResults)
+void UMultiplayerSessionsSubsystem::FindSessions(int32 MaxSearchResults, int32 PlayerIdNum)
 {
 	if (!SessionInterface.IsValid())
 	{
@@ -69,14 +68,13 @@ void UMultiplayerSessionsSubsystem::FindSessions(int32 MaxSearchResults)
 	}
 
 	FindSessionsCompleteDelegate_Handle = SessionInterface->AddOnFindSessionsCompleteDelegate_Handle(FindSessionsCompleteDelegate);
-
 	LastSessionSearch = MakeShareable(new FOnlineSessionSearch());
 	LastSessionSearch->MaxSearchResults = MaxSearchResults;
 	LastSessionSearch->bIsLanQuery = IOnlineSubsystem::Get()->GetSubsystemName() == "NULL" ? true : false;
 	LastSessionSearch->QuerySettings.Set(SEARCH_PRESENCE, true, EOnlineComparisonOp::Equals);
 
-	const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
-	if (!SessionInterface->FindSessions(*LocalPlayer->GetPreferredUniqueNetId(), LastSessionSearch.ToSharedRef()))
+	//const ULocalPlayer* LocalPlayer = GetWorld()->GetFirstLocalPlayerFromController();
+	if (!SessionInterface->FindSessions(/* *LocalPlayer->GetPreferredUniqueNetId()*/0, LastSessionSearch.ToSharedRef()))
 	{
 		SessionInterface->ClearOnFindSessionsCompleteDelegate_Handle(FindSessionsCompleteDelegate_Handle);
 		MultiplayerOnFindSessionsComplete.Broadcast(TArray<FOnlineSessionSearchResult>(), false);
@@ -125,25 +123,14 @@ void UMultiplayerSessionsSubsystem::StartSession()
 		MultiplayerOnStartSessionComplete.Broadcast(false);
 		return;
 	}
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		15.0f,
-		FColor::Red,
-		FString::Printf(TEXT("A"))
-	);
 
 	StartSessionCompleteDelegate_Handle = SessionInterface->AddOnStartSessionCompleteDelegate_Handle(StartSessionCompleteDelegate);
 
+	UE_LOG(LogTemp, Warning, TEXT("Starting Session now!"));
 	if (!SessionInterface->StartSession(NAME_GameSession))
 	{
 		SessionInterface->ClearOnStartSessionCompleteDelegate_Handle(StartSessionCompleteDelegate_Handle);
 		MultiplayerOnStartSessionComplete.Broadcast(false);
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			15.0f,
-			FColor::Red,
-			FString::Printf(TEXT("B"))
-		);
 	}
 }
 
@@ -205,20 +192,7 @@ void UMultiplayerSessionsSubsystem::OnStartSessionComplete(FName SessionName, bo
 {
 	if (SessionInterface)
 	{
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			15.0f,
-			FColor::Red,
-			FString::Printf(TEXT("C"))
-		);
 		SessionInterface->ClearOnStartSessionCompleteDelegate_Handle(StartSessionCompleteDelegate_Handle);
 	}
-	GEngine->AddOnScreenDebugMessage(
-		-1,
-		15.0f,
-		FColor::Red,
-		FString::Printf(TEXT("D"))
-	);
-
 	MultiplayerOnStartSessionComplete.Broadcast(bWasSuccessful);
 }

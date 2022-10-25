@@ -34,4 +34,4 @@ There are two subsystems to use for testing/running this plugin.
 2. `OnlineSubsystemSteam`: Use this for production environments to connect to your Steam account.
     - `DefaultEngine.ini`: Change to `DefaultPlatformService=Steam`
 
-###### Note: Both Online Subsystem Plugins are enabled in `MultiplayerSessions.uplugin` and in `MultiplayerSessions.Build.cs`.
+###### Note: Both Online Subsystem Plugins are enabled in `MultiplayerSessions.uplugin` and in `MultiplayerSessions.Build.cs`. To Test locally, you cannot use F5 from VS; you must launch UE separately after build.

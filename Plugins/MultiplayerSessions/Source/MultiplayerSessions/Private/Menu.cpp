@@ -68,42 +68,27 @@ bool UMenu::Initialize()
 
 void UMenu::OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Removing from World!"));
 	Super::OnLevelRemovedFromWorld(InLevel, InWorld);
-	MenuTearDown();
+	//MenuTearDown();
 }
 
 void UMenu::OnCreateSession(bool bWasSuccessful)
 {
 	if (bWasSuccessful)
 	{
-		if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				15.f,
-				FColor::Yellow,
-				FString(TEXT("Session Created Successfully!"))
-			);
-		}
-
+		UE_LOG(LogTemp, Warning, TEXT("Session created successfully!"));
 		UWorld* world = GetWorld();
 		if (world)
 		{
 			world->ServerTravel(m_PathToLobby);
+			UE_LOG(LogTemp, Warning, TEXT("Opening Lobby level now..."));
 		}
 	}
 	else
 	{
-		if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				15.f,
-				FColor::Red,
-				FString(TEXT("Failed to create session!"))
-			);
-		}
-		// Renable Host button if failed to create a session
+		UE_LOG(LogTemp, Warning, TEXT("Failed to create session!"))
+		// Re-enable Host button if failed to create a session
 		HostButton->SetIsEnabled(true);
 	}
 }
@@ -114,6 +99,9 @@ void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResu
 	{
 		return;
 	}
+
+	UE_LOG(LogTemp, Warning, TEXT("Found Sessions? %s"), bWasSuccessful ? TEXT("true") : TEXT("false"));
+	UE_LOG(LogTemp, Warning, TEXT("Session Results size = %d"), SessionResults.Num());
 
 	for (auto result : SessionResults)
 	{	
@@ -148,6 +136,7 @@ void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
 			if (PlayerController != nullptr)
 			{
 				PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute);
+				UE_LOG(LogTemp, Warning, TEXT("Client Traveling to Server Level now..."));
 			}
 		}
 	}
@@ -166,21 +155,7 @@ void UMenu::OnStartSession(bool bWasSuccessful)
 {
 	if (bWasSuccessful)
 	{
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			15.0f,
-			FColor::Red,
-			FString::Printf(TEXT("E"))
-		);
-		if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				15.0f,
-				FColor::Red,
-				FString::Printf(TEXT("Session was successfully started!"))
-			);
-		}
+		UE_LOG(LogTemp, Warning, TEXT("Session was successfully started!"));
 	}
 }
 
@@ -189,17 +164,9 @@ void UMenu::HostButtonClicked()
 	HostButton->SetIsEnabled(false);
 	if (MultiplayerSessionsSubsystem)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Player Num creating a session = %d"), m_PlayerNum);
 		MultiplayerSessionsSubsystem->CreateSession(m_NumPublicConnections, m_MatchType);
-		/*if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				15.0f,
-				FColor::Red,
-				FString::Printf(TEXT("Trying to start Session..."))
-			);
-		}
-		MultiplayerSessionsSubsystem->StartSession();*/
+		MultiplayerSessionsSubsystem->StartSession();
 	}
 }
 
@@ -208,7 +175,9 @@ void UMenu::JoinButtonClicked()
 	JoinButton->SetIsEnabled(false);
 	if (MultiplayerSessionsSubsystem)
 	{
-		MultiplayerSessionsSubsystem->FindSessions(10000);
+		m_PlayerNum += 1;
+		UE_LOG(LogTemp, Warning, TEXT("Player Num joining a session = %d"), m_PlayerNum);
+		MultiplayerSessionsSubsystem->FindSessions(10000, m_PlayerNum);
 	}
 }
 
