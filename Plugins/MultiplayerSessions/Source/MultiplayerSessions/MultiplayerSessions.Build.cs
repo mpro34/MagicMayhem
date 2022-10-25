@@ -28,6 +28,7 @@ public class MultiplayerSessions : ModuleRules
 				"Core",
 				"OnlineSubsystem",
 				"OnlineSubsystemSteam",
+				"OnlineSubsystemNull", // Used for LAN-only testing purposes
 				"UMG",
 				"Slate",
 				"SlateCore"

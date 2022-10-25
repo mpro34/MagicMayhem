@@ -117,13 +117,14 @@ void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResu
 
 	for (auto result : SessionResults)
 	{	
-		FString MatchType;
-		result.Session.SessionSettings.Get(FName("MatchType"), MatchType);
-		if (MatchType == "FreeForAll")
-		{
-			MultiplayerSessionsSubsystem->JoinSession(result);
-			return;
-		}
+		UE_LOG(LogTemp, Warning, TEXT("Session Name here"));
+		//FString MatchType;
+		//result.Session.SessionSettings.Get(FName("MatchType"), MatchType);
+		//if (MatchType == "FreeForAll")
+		//{
+		//	MultiplayerSessionsSubsystem->JoinSession(result);
+		//	return;
+		//}
 	}
 
 	if (!bWasSuccessful || SessionResults.IsEmpty())

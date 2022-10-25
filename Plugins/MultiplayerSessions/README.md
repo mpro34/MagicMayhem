@@ -26,3 +26,12 @@ The plugin starts in the Menu class where once the user is able to Host a game o
 - `SessionInterface->JoinSession(PlayerID, SessionName, FOnlineSessionSearchResult())`: Joins a session and broadcasts to delegates.
 - `MultiplayerOnJoinSessionComplete.Broadcast` ->  `UMenu::OnJoinSession()`: The callback in the UMenu class will then have access to the created session.
 - `PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute)`: Once a created session is found, teleport the player to the specified lobby map.
+
+### Local Testing
+There are two subsystems to use for testing/running this plugin.
+1. `OnlineSubsystemNull`: Use this when trying to test locally.
+    - `DefaultEngine.ini`: Change to `DefaultPlatformService=Null`
+2. `OnlineSubsystemSteam`: Use this for production environments to connect to your Steam account.
+    - `DefaultEngine.ini`: Change to `DefaultPlatformService=Steam`
+
+###### Note: Both Online Subsystem Plugins are enabled in `MultiplayerSessions.uplugin` and in `MultiplayerSessions.Build.cs`.
