@@ -23,9 +23,14 @@ There are 3 sections to the game mode, the first gets the players ready to start
 https://trello.com/b/hYpKKJOR/magic-mayhem
 
 #### Gameplay [Work-In-Progress]
+- [ ] **Player Magic**. Players will no longer be able to use guns. Their weapons will be magic stones that are imbued with a magic element. Holding one gives the player a set of abilities to use against the zombie horde. Their off-hand is used only for melee. 
+Use a data-driven approach with data-assets and the ability for non-coders to implement new abilities.
+    - [ ] https://dev.epicgames.com/community/learning/courses/Xp/unreal-engine-improving-c-workflows-using-data/Pe7/unreal-engine-improving-c-workflows-using-data-introduction
+    - [ ] https://docs.unrealengine.com/5.0/en-US/data-driven-gameplay-elements-in-unreal-engine/
+    - [ ] http://www.levelplusgames.com/ue4-c-data-assets/
+ 
 - [ ] **Online Game Systems**. Connect UE5 online systems: https://docs.unrealengine.com/5.0/en-US/online-subsystem-in-unreal-engine/
 - [ ] **Zombies Game Mode**. Able to play the game single player or multiplayer by AI enemy "zombies" to kill.
-- [ ] **Player Magic**. Players will no longer be able to use guns. Their weapons will be magic stones that are imbued with a magic element. Holding one gives the player a set of abilities to use against the zombie horde. Their off-hand is used only for melee.
 - [ ] **New mine launcher weapon**. Shoots mines a short distance. If an enemy gets close, it'll explode.
 - [ ] **Titan Game Mode**. A new coop game mode where all players must defend multiple panels. Titans are spawned and will attack the players. If attacked, they will attack you.
 - [ ] **Default sword mode**. If the player has no weapons/no ammo/no grenades. The player should play an animation to get a sword for use to attack. Or just make the sword another weapon that is the default weapon.
