@@ -7,6 +7,9 @@ Content/Assets
 Content/Megascans
 Content/StarterContent
 
+Plugins/MultiplayerSessions/Binaries
+Plugins/MultiplayerSessions/Intermediate
+
 .vscode
 .vs
 *.VC.db
