@@ -22,6 +22,7 @@ void AMagiPlayerController::BeginPlay()
 	Super::BeginPlay();
 
 	MagiHUD = Cast<AMagiHUD>(GetHUD());
+	UE_LOG(LogTemp, Warning, TEXT("Begin playercontroller play!"));
 	ServerCheckMatchState();
 }
 
@@ -267,6 +268,7 @@ void AMagiPlayerController::ClientElimAnnouncement_Implementation(APlayerState* 
 void AMagiPlayerController::ServerCheckMatchState_Implementation()
 {
 	AMagiGameMode* GameMode = Cast<AMagiGameMode>(UGameplayStatics::GetGameMode(this));
+	UE_LOG(LogTemp, Warning, TEXT("ServerCheckMatchState_Implementation"));
 	if (GameMode)
 	{
 		WarmupTime = GameMode->WarmupTime;
@@ -275,6 +277,7 @@ void AMagiPlayerController::ServerCheckMatchState_Implementation()
 		CooldownTime = GameMode->CooldownTime;
 		MatchState = GameMode->GetMatchState();
 		ClientJoinMidGame(MatchState, WarmupTime, MatchTime, LevelStartingTime, CooldownTime);
+		UE_LOG(LogTemp, Warning, TEXT("Match State..."));
 	}
 }
 
@@ -286,9 +289,11 @@ void AMagiPlayerController::ClientJoinMidGame_Implementation(FName StateOfMatch,
 	CooldownTime = Cooldown;
 	MatchState = StateOfMatch;
 	OnMatchStateSet(MatchState);
+	UE_LOG(LogTemp, Warning, TEXT("HERE"));
 	if (MagiHUD && MatchState == MatchState::WaitingToStart)
 	{
 		MagiHUD->AddAnnouncement();
+		UE_LOG(LogTemp, Warning, TEXT("Adding announcement"));
 	}
 }
 

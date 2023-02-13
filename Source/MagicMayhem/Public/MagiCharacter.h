@@ -59,6 +59,7 @@ public:
 	void UpdateHUDAmmo();
 
 	void SpawnDefaultWeapon();
+	void SpawnDefaultMagic();
 
 	UPROPERTY()
 	TMap<FName, class UBoxComponent*> HitCollisionBoxes;

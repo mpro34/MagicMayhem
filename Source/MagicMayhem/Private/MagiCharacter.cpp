@@ -170,6 +170,7 @@ void AMagiCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	SpawnDefaultWeapon();
+	// TODO: SpawnDefaultMagic();
 	UpdateHUDAmmo();
 	
 	UpdateHUDHealth();
@@ -958,6 +959,23 @@ void AMagiCharacter::SpawnDefaultWeapon()
 		{
 			Combat->EquipWeapon(StartingWeapon);
 		}
+	}
+}
+
+void AMagiCharacter::SpawnDefaultMagic()
+{
+	MagiGameMode = MagiGameMode == nullptr ? GetWorld()->GetAuthGameMode<AMagiGameMode>() : MagiGameMode;
+	UWorld* World = GetWorld();
+	if (MagiGameMode && World && !bEliminated && DefaultWeaponClass)
+	{
+		// TODO: Spawn Magic Class Orb
+		
+		//AWeapon* StartingWeapon = World->SpawnActor<AWeapon>(DefaultWeaponClass);
+		//StartingWeapon->bDestroyWeapon = true; // Destroy starting weapon when player is elminated
+		//if (Combat)
+		//{
+		//	Combat->EquipWeapon(StartingWeapon);
+		//}
 	}
 }
 

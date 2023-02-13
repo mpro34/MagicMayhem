@@ -269,6 +269,8 @@
 /I ..\Plugins\Online\OnlineSubsystemUtils\Source
 /I ..\Plugins\Online\OnlineSubsystemUtils\Source\OnlineSubsystemUtils\Classes
 /I ..\Plugins\Online\OnlineSubsystemUtils\Source\OnlineSubsystemUtils\Public
+/I ..\Plugins\Online\OnlineSubsystemNull
+/I ..\Plugins\Online\OnlineSubsystemNull\Source\Public
 /I ThirdParty\mimalloc\include
 /I ThirdParty\LibTiff\Source\Win64
 /I ThirdParty\LibTiff\Source

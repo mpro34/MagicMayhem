@@ -58,5 +58,4 @@ private:
 	FString m_MatchType{TEXT("FreeForAll")};
 
 	FString m_PathToLobby{ TEXT("") };
-	int32 m_PlayerNum{ 1 };
 };
