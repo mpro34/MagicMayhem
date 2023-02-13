@@ -70,7 +70,7 @@ void UMenu::OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Removing from World!"));
 	Super::OnLevelRemovedFromWorld(InLevel, InWorld);
-	//MenuTearDown();
+	MenuTearDown();
 }
 
 void UMenu::OnCreateSession(bool bWasSuccessful)
@@ -105,14 +105,13 @@ void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResu
 
 	for (auto result : SessionResults)
 	{	
-		UE_LOG(LogTemp, Warning, TEXT("Session Name here"));
-		//FString MatchType;
-		//result.Session.SessionSettings.Get(FName("MatchType"), MatchType);
-		//if (MatchType == "FreeForAll")
-		//{
-		//	MultiplayerSessionsSubsystem->JoinSession(result);
-		//	return;
-		//}
+		FString MatchType;
+		result.Session.SessionSettings.Get(FName("MatchType"), MatchType);
+		if (MatchType == "FreeForAll")
+		{
+			MultiplayerSessionsSubsystem->JoinSession(result);
+			return;
+		}
 	}
 
 	if (!bWasSuccessful || SessionResults.IsEmpty())
