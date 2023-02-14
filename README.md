@@ -8,6 +8,12 @@ There are 3 sections to the game mode, the first gets the players ready to start
 ![Gameplay Screenshot](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/Gameplay_2.jpg)
 ![GameCooldown Screenshot](https://github.com/mpro34/MagicMayhem/blob/master/Screenshots/Closing_1.jpg)
 
+## Getting Started:
+1. Clone repo
+2. Run `MagicMayhemTest.bat` to launch the game with an attached log.
+3. Click "Host" or "Join" to create or join a Steam Session, respectfully.
+NOTE: If trying to play with multiple people, change the number of players accordingly. Also, use the check boxes to change the game mode.
+
 ## Systems Implemented:
 - [X] **Different game skin**. More realistic aesthetic to match the weapons.
   - [X] Character(s)
