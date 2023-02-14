@@ -12,6 +12,7 @@ There are 3 sections to the game mode, the first gets the players ready to start
 1. Clone repo
 2. Run `MagicMayhemTest.bat` to launch the game with an attached log.
 3. Click "Host" or "Join" to create or join a Steam Session, respectfully.
+4. If hosting a game, you will enter the Lobby until the set number of players are in the game.
 NOTE: If trying to play with multiple people, change the number of players accordingly. Also, use the check boxes to change the game mode.
 
 ## Systems Implemented:
